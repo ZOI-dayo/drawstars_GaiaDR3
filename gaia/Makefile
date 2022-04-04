@@ -1,6 +1,6 @@
 
 ARCHIVE_DIR := $(shell cat ARCHIVE_DIR)
-GAIA_CSV_LAST_FILE = $(ARCHIVE_DIR)/cdn.gea.esac.esa.int/Gaia/gdr2/gaia_source/csv/MD5SUM.txt
+GAIA_CSV_LAST_FILE = $(ARCHIVE_DIR)/cdn.gea.esac.esa.int/Gaia/gedr3/gaia_source/_MD5SUM.txt
 
 gaia_ra_dec_g_bp_rp_teff.dat: $(GAIA_CSV_LAST_FILE) gaia_extract
 #	./gaia_extract.py

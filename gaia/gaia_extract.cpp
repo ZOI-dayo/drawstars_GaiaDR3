@@ -1,6 +1,6 @@
 /**
  * @file
- * @brief Extract Data from GAIR DR2 gaia_source/*.gz.csv
+ * @brief Extract Data from GAIR EDR3 gaia_source/*.gz.csv
  * @author AKIYAMA Kouhei
  */
 #include <cstdio>
@@ -354,7 +354,7 @@ int main(int argc, char *argv[])
     unsigned int numInvalidLines = 0;
 
     unsigned int numFiles = 0;
-    const std::string SOURCE_DIR = readFirstLine("ARCHIVE_DIR", ".") + "/cdn.gea.esac.esa.int/Gaia/gdr2/gaia_source/csv";
+    const std::string SOURCE_DIR = readFirstLine("ARCHIVE_DIR", ".") + "/cdn.gea.esac.esa.int/Gaia/gedr3/gaia_source";
     printf("ARCHIVE_DIR=%s\n", SOURCE_DIR.c_str());
 
     for(auto &p : std::filesystem::directory_iterator(SOURCE_DIR)){

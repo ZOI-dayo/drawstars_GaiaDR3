@@ -9,7 +9,7 @@ with open('ARCHIVE_DIR', 'r') as fd:
 
 print('archive_dir=' + archive_dir);
 
-dir = archive_dir + "/cdn.gea.esac.esa.int/Gaia/gdr2/gaia_source/csv/";
+dir = archive_dir + "/cdn.gea.esac.esa.int/Gaia/gedr3/gaia_source/";
 files = glob.glob(os.path.join(dir, "*.csv.gz"));
 
 # number of stars: 1,692,919,135 < 2^31 (int)

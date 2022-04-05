@@ -307,7 +307,7 @@ bool extract(FloatOutputFile &outfile,
             const float rp = getColumnAsFloat(cols, col_phot_rp_mean_mag);
             // https://arxiv.org/pdf/1008.0815.pdf (2)
             const float cxp = bp - rp;
-            const float teff = std::max(std::exp(3.999 - 0.654 * cxp + 0.709 * std::pow(cxp, 2) - 0.316 * std::pow(cxp, 3)), 0);
+            const float teff = std::max(std::exp(3.999 - 0.654 * cxp + 0.709 * std::pow(cxp, 2) - 0.316 * std::pow(cxp, 3)), 0.0);
 
             outfile.write(ra);
             outfile.write(dec);

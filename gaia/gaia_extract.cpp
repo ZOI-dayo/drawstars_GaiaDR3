@@ -6,6 +6,7 @@
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
+#include <cmath>
 #include <string>
 #include <stdexcept>
 #include <vector>
@@ -304,7 +305,9 @@ bool extract(FloatOutputFile &outfile,
             const float g = getColumnAsFloat(cols, col_phot_g_mean_mag);
             const float bp = getColumnAsFloat(cols, col_phot_bp_mean_mag);
             const float rp = getColumnAsFloat(cols, col_phot_rp_mean_mag);
-            const float teff = getColumnAsFloat(cols, col_teff_val, 0);
+            // https://arxiv.org/pdf/1008.0815.pdf (2)
+            const float cxp = bp - rp;
+            const float teff = std::max(std::exp(3.999 - 0.654 * cxp + 0.709 * std::pow(cxp, 2) - 0.316 * std::pow(cxp, 3)), 0);
 
             outfile.write(ra);
             outfile.write(dec);
